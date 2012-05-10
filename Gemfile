@@ -22,5 +22,8 @@ end
 gem 'jquery-rails'
 
 gem 'private_pub'
+gem 'faye', '>= 0.8.0'
+gem 'faye-redis'
+gem 'thin' 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
