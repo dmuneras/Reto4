@@ -1,0 +1,6 @@
+production:
+  host: "panga.redistogo.com"
+  port: "9466"
+  password: "c82bd6eb849dc7cc887ee03d0ca12414"
+  database: "1"
+  namespace: '/namespace'
