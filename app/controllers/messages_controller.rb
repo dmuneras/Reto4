@@ -3,7 +3,10 @@ class MessagesController < ApplicationController
   def index 
       @messages = Message.message_by_channel current_channel 
       @users = User.all
-      @channels = Channel.all   
+      @channels = Channel.all
+      if current_channel
+        @channel = "/messages/new/#{current_channel.name}" 
+      end   
   end
 
   def create
@@ -13,12 +16,14 @@ class MessagesController < ApplicationController
           @message = Message.new params[:message]
           @message.from , @message.channel_id  = current_user.id , current_channel.id 
           if @message.save
-            format.js {PrivatePub.publish_to("/messages/new/", message: @message)}
+            @channel = "/messages/new/#{current_channel.name}"
+            format.js {PrivatePub.publish_to(@channel, message: @message)}
           else
             @error_msg = @message.errors.full_messages[0]
             format.js {render 'new'}
           end
         rescue Exception => e
+          @expection = e.message
           format.js {render 'new'}
         end
       end
@@ -34,7 +39,8 @@ class MessagesController < ApplicationController
       @message = Message.create! params[:message]  
       @message.from = client.id
       @message.save
-      PrivatePub.publish_to("/messages/new/Principal", message: @message)
+      @channel = "/messages/#{current_channel.name}"
+      format.js {PrivatePub.publish_to(@channel, message: @message)}
       render 'create'
     end
   end
@@ -42,7 +48,8 @@ class MessagesController < ApplicationController
   def destroy 
     if current_user
       Message.destroy params[:id]
-      PrivatePub.publish_to("/messages/new/", "location.reload();$('#channel_name').reset()")
+      @channel = "/messages/new/#{current_channel.name}"
+      PrivatePub.publish_to(@channel, "location.reload();$('#channel_name').reset()")
       redirect_to root_url, :notice => t(:successfully_d)
     else
       redirect_to root_url
@@ -57,6 +64,7 @@ class MessagesController < ApplicationController
   def chat
     @messages = Message.message_by_channel current_channel 
     @users = User.all
+    @channel = "/messages/new/#{current_channel.name}"
     respond_to do |format|
       format.html{
         if current_channel

@@ -1,6 +1,7 @@
 Chatter::Application.routes.draw do
  
-  resources :channels
+  resources :channels 
+  
   resources :messages 
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout

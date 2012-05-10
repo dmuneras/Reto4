@@ -21,7 +21,7 @@
 <% if current_channel.nil? or current_channel.blank? %>
 	<p>Seleccione canal para empezar</p>
 <% else %>
-	<h3><%= current_channel.name %></h3>
+	<h3><%= @channel %></h3>
 	<ul id="chat">
   		<%= render @messages %>
 	</ul>
@@ -32,4 +32,5 @@
 	<% end %>
 <% end %>
 </div>
-<%= subscribe_to "/messages/new" %>
+<%= subscribe_to @channel %>
+

@@ -1,7 +1,7 @@
 <% if current_channel.nil? or current_channel.blank? %>
 	<p>Seleccione canal para empezar</p>
 <% else %>
-	<h3><%= @title %></h3>
+	<h3><%= @channel %></h3>
 	<ul id="chat">
   		<%= render @messages %>
 	</ul>
@@ -11,3 +11,4 @@
   		<%= f.submit t(:send), :id => "create-msg" %>
 	<% end %>
 <% end %>
+<%= subscribe_to @channel %>

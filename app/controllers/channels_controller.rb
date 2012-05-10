@@ -43,7 +43,8 @@ class ChannelsController < ApplicationController
     respond_to do |format|
       if @channel.save
         format.js {  
-          PrivatePub.publish_to("/messages/new", "$('div#channel_list').load('/update_channels');")
+          @channel_pub = "/messages/new/#{current_channel.name}"
+          PrivatePub.publish_to(@channel_pub, "$('div#channel_list').load('/update_channels');")
           @user_msg = "#{t(:new_channel_created)} : #{@channel.name}"
           render :layout => false
         }
@@ -62,7 +63,6 @@ class ChannelsController < ApplicationController
   # PUT /channels/1.json
   def update
     @channel = Channel.find(params[:id])
-
     respond_to do |format|
       if @channel.update_attributes(params[:channel])
         format.html { redirect_to @channel, notice: 'Channel was successfully updated.' }
@@ -91,3 +91,5 @@ class ChannelsController < ApplicationController
     render :layout => false
   end
 end
+
+
