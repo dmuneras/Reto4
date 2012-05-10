@@ -4,4 +4,7 @@ development:
 test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
-  
+production:
+  server: "panga.redistogo.com:9466"
+  secret_token: "eff5c73775bb3d69cc316dade243d065ea4820e10a83b097cc86c5e7d08f0822"
+  signature_expiration: 3600 # one hour
