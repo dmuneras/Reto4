@@ -4,10 +4,7 @@ development:
 test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
-
 production:
-  host: "panga.redistogo.com"
-  port: "9466"
-  password: "c82bd6eb849dc7cc887ee03d0ca12414"
-  database: "1"
-  namespace: '/namespace'
+  server: "http://chatte.herokuapp.com/faye"
+  secret_token: "b2df52f36a7f1916d4e28c712841153fd71a4915f7ebef97786c42c9ee52607b"
+  signature_expiration: 3600 # one hour
