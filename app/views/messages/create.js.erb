@@ -1,4 +1,4 @@
-<% publish_to @channel do %>
+<% publish_to current_channel_route do %>
 	//$("#chat").append("<%= escape_javascript render(@message) %>");
 	$("#chat-container").load("/chat");
 <% end %>

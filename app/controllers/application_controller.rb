@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
   helper_method :current_channel
+  helper_method :current_channel_route
   
   private
   def current_user?
@@ -28,5 +29,9 @@ class ApplicationController < ActionController::Base
     rescue Exception => e
         return nil
     end
+  end
+  
+  def current_channel_route
+    return "/messages/new/#{current_channel.name}" if current_channel
   end
 end
