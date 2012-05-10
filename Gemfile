@@ -21,7 +21,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'private_pub'
+gem 'private_pub', '1.0.1'
 gem 'faye', '>= 0.8.0'
 gem 'faye-redis'
 gem 'thin' 
