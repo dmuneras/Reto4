@@ -5,6 +5,6 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://chatte.herokuapp.com:9466/faye"
+  server: "redis://redistogo:c82bd6eb849dc7cc887ee03d0ca12414@panga.redistogo.com:9466/faye"
   secret_token: "34c5faf078b42e07bfa60cf64862a8e72fd2c77a5f294c4ae2fa28c9f8735f70"
   signature_expiration: 3600 # one hour
