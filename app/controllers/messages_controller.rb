@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
           @message = Message.new params[:message]
           @message.from , @message.channel_id  = current_user.id , current_channel.id 
           if @message.save
-            format.js {PrivatePub.publish_to("/messages/new", message: @message)}
+            format.js {PrivatePub.publish_to("/messages/new/", message: @message)}
           else
             @error_msg = @message.errors.full_messages[0]
             format.js {render 'new'}
@@ -34,7 +34,7 @@ class MessagesController < ApplicationController
       @message = Message.create! params[:message]  
       @message.from = client.id
       @message.save
-      PrivatePub.publish_to("/messages/new", message: @message)
+      PrivatePub.publish_to("/messages/new/Principal", message: @message)
       render 'create'
     end
   end
@@ -42,7 +42,7 @@ class MessagesController < ApplicationController
   def destroy 
     if current_user
       Message.destroy params[:id]
-      PrivatePub.publish_to("/messages/new", "location.reload();$('#channel_name').reset()")
+      PrivatePub.publish_to("/messages/new/", "location.reload();$('#channel_name').reset()")
       redirect_to root_url, :notice => t(:successfully_d)
     else
       redirect_to root_url
