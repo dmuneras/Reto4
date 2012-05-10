@@ -1,1 +1,1 @@
-faye: bundle exec rackup private_pub.ru -s thin -p $PORT -e $RACK_ENV 
+web: bundle exec rackup private_pub.ru -s thin -p $PORT -e $RACK_ENV 
