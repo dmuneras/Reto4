@@ -1,4 +1,5 @@
 <% publish_to @channel do %>
-	$("#chat").append("<%= escape_javascript render(@message) %>");
+	//$("#chat").append("<%= escape_javascript render(@message) %>");
+	$("#chat-container").load("/chat");
 <% end %>
 $("#new_message")[0].reset();
