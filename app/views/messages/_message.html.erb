@@ -1,0 +1,8 @@
+<li>
+  <span class="created_at"><%= message.created_at.strftime("%H:%M") %></span>
+  <% if current_user and current_channel.name.eql? message.channel.name%>
+  	<%= "#{current_user.username} #{t(:said)} : #{message.content}" %>
+  	<%= link_to t(:delete), message, :confirm => t(:ays), :method => :delete %>
+  <% end %>
+</li>
+

@@ -1,0 +1,35 @@
+<h1>Chat</h1>
+<p><%= t(:to_create_channel) %></p>
+<%= form_for Channel.new, remote: true do |f| %>
+	 <%= f.label t(:name_channel) %><br />
+	 <%= f.text_field :name %>
+	 <%= f.submit t(:create), :id => "create-channel" %>
+<% end %>
+<span id= "msg-channel"></span>
+<br>
+<%= link_to "Lista de canales", channels_url%>
+<div id = "channel_list">
+<p><%= t(:choose_channel)%></p>
+<%= form_tag '/update_chat', remote: true do %>
+  <%= select_tag "channel_id", options_from_collection_for_select(@channels, "id", "name"), {:include_blank => true} %>
+  <%= submit_tag t(:choose)%>
+<% end %>
+</div>
+<span id= "msg-update-chat"></span>
+<br>
+<div id = "chat-container">
+<% if current_channel.nil? or current_channel.blank? %>
+	<p>Seleccione canal para empezar</p>
+<% else %>
+	<h3><%= current_channel.name %></h3>
+	<ul id="chat">
+  		<%= render @messages %>
+	</ul>
+	<%= form_for Message.new, remote: true do |f| %>
+  		<%= f.text_field :content %>
+  		<%= select_tag "message[to]", options_from_collection_for_select(@users, "id", "username"), {:include_blank => true} %>
+  		<%= f.submit t(:send), :id => "create-msg" %>
+	<% end %>
+<% end %>
+</div>
+<%= subscribe_to "/messages/new" %>

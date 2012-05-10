@@ -1,0 +1,18 @@
+<% t(:channels) %>
+
+<table>
+  <tr>
+    <th><%=t(:name)%></th>
+  </tr>
+  <% for channel in @channels %>
+    <tr>
+      <td><%= channel.name %></td>
+      <td><%= link_to t(:edit), edit_channel_path(channel) %></td>
+      <td><%= link_to t(:delete), channel, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t(:back), root_url %>
+
+

@@ -1,0 +1,4 @@
+$('#chat-container').load('/chat');
+$('#msg-update-chat').css('display','block');
+$('#msg-update-chat').html("<%= j @user_msg %>");
+$('#msg-update-chat').fadeOut(2000);
