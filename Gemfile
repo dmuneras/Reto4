@@ -4,8 +4,6 @@ gem 'rails', '3.1.3'
 
 group :development do
   gem 'sqlite3'	
-  gem 'taps'
-  gem 'rvm'
 end
 
 # Gems used only for assets and not required
