@@ -1,1 +1,1 @@
-chat: bundle exec rackup private_pub.ru -s thin -p $PORT -e $RACK_ENV 
+worker: bundle exec rackup private_pub.ru -s thin -p $PORT -e $RACK_ENV 
