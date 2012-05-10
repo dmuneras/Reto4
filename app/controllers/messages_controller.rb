@@ -56,9 +56,13 @@ class MessagesController < ApplicationController
     end
   end
   
-  def update_chat   
-    session[:channel_id] = params[:channel_id] unless params[:channel_id].blank? 
-    @user_msg = "#{t(:new_channel_selected)} : #{current_channel.name}"
+  def update_chat  
+    unless params[:channel_id].blank? 
+      session[:channel_id] = params[:channel_id] unless params[:channel_id].blank? 
+      @user_msg = "#{t(:new_channel_selected)} : #{current_channel.name}"
+    else
+      redirect_to root_url
+    end
   end
   
   def chat

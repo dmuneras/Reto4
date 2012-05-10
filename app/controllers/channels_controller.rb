@@ -42,11 +42,11 @@ class ChannelsController < ApplicationController
     @channel = Channel.new(params[:channel])
     respond_to do |format|
       if @channel.save
-        format.js {  
-          @channel_pub = "/messages/new/#{current_channel.name}"
-          PrivatePub.publish_to(@channel_pub, "$('div#channel_list').load('/update_channels');")
-          @user_msg = "#{t(:new_channel_created)} : #{@channel.name}"
-          render :layout => false
+        format.js {     
+            @channel_pub = "/messages/new/#{current_channel.name}"  if current_channel
+            PrivatePub.publish_to(@channel_pub, "$('div#channel_list').load('/update_channels');")
+            @user_msg = "#{t(:new_channel_created)} : #{@channel.name}"
+            render :layout => false
         }
         format.json { render json: @channel, status: :created, location: @channel }
 

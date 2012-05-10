@@ -1,4 +1,5 @@
 $('form#new_channel')[0].reset();
 $('#msg-channel').css('display','block');
 $('#msg-channel').html("<%= j @user_msg %>");
+$('div#channel_list').load('/update_channels');
 $('#msg-channel').fadeOut(2000);
