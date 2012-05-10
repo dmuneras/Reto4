@@ -1,5 +1,12 @@
-<% publish_to current_channel_route do %>
-	//$("#chat").append("<%= escape_javascript render(@message) %>");
-	$("#chat-container").load("/chat");
+<% if @channel_user %>
+	<% publish_to @channel_user do %>
+		//$("#chat").append("<%= escape_javascript render(@message) %>");
+		$("#chat-container").load("/chat");
+	<% end %>
+<% else %>
+	<% publish_to current_channel_route do %>
+		//$("#chat").append("<%= escape_javascript render(@message) %>");
+		$("#chat-container").load("/chat");
+	<% end %>
 <% end %>
 $("#new_message")[0].reset();

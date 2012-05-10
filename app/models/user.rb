@@ -11,12 +11,7 @@ class User < ActiveRecord::Base
     end
   end
   
-  def self.to_select
-    users = []
-    for user in User.all
-      users << {user.username => user.id}
-    end
-    return users
+  def my_private_msg? msg
+    return true if self.received_msgs.include? msg
   end
-  
 end

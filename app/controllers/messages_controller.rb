@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_filter :current_user? , :except => [:create_client, :chat, :index]
   def index 
-      @messages = Message.message_by_channel current_channel 
+      @messages = Message.message_by_channel(current_channel,current_user) 
       @users = User.all
       @channels = Channel.all  
   end
@@ -13,8 +13,14 @@ class MessagesController < ApplicationController
           @message = Message.new params[:message]
           @message.from , @message.channel_id  = current_user.id , current_channel.id 
           if @message.save
-            logger.info "-------> current channel #{current_channel_route}"
-            format.js {PrivatePub.publish_to(current_channel_route, message: @message)}
+            format.js {
+              if !(@message.to.nil?)
+                @channel_user = "#{current_channel_route}/#{@message.to_user.id}"
+                PrivatePub.publish_to(@channel_user, message: @message)
+              else
+                PrivatePub.publish_to(current_channel_route, message: @message)
+              end
+            }
           else
             @error_msg = @message.errors.full_messages[0]
             format.js {render 'new'}
@@ -44,7 +50,6 @@ class MessagesController < ApplicationController
   def destroy 
     if current_user
       Message.destroy params[:id]
-      logger.info "-------> current channel #{current_channel_route}"
       PrivatePub.publish_to(current_channel_route, "location.reload();$('#channel_name').reset();")
       redirect_to root_url, :notice => t(:successfully_d)
     else
@@ -62,7 +67,8 @@ class MessagesController < ApplicationController
   end
   
   def chat
-    @messages = Message.message_by_channel current_channel 
+    @messages = Message.message_by_channel(current_channel, current_user) 
+    logger.info "====> Valid MESSAGE: #{@message}"
     @users = User.all
     respond_to do |format|
       format.html{

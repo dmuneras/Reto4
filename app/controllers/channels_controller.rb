@@ -43,17 +43,15 @@ class ChannelsController < ApplicationController
     respond_to do |format|
       if @channel.save
         format.js {     
-            @channel_pub = "/messages/new/#{current_channel.name}"  if current_channel
-            PrivatePub.publish_to(@channel_pub, "$('div#channel_list').load('/update_channels');")
+            PrivatePub.publish_to(current_channel_route, "$('div#channel_list').load('/update_channels');")
             @user_msg = "#{t(:new_channel_created)} : #{@channel.name}"
             render :layout => false
         }
         format.json { render json: @channel, status: :created, location: @channel }
 
       else
-        logger.info "----> errrores : #{@channel.errors.full_messages[0]}"
         @error_msg = @channel.errors.full_messages[0]
-        format.js { render action: "new" }
+        format.js { render action: "errors" }
         format.json { render json: @channel.errors, status: :unprocessable_entity }
       end
     end

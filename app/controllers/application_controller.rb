@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :current_channel
   helper_method :current_channel_route
+  helper_method :current_user_channel
   
   private
   def current_user?
@@ -34,4 +35,9 @@ class ApplicationController < ActionController::Base
   def current_channel_route
     return "/messages/new/#{current_channel.name}" if current_channel
   end
+  
+  def current_user_channel
+    return "#{current_channel_route}/#{current_user.id}"
+  end
+  
 end
