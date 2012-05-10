@@ -20,10 +20,8 @@ group :production do
 end
 
 gem 'jquery-rails'
-
-gem 'private_pub', '1.0.1'
-gem 'faye', '>= 0.8.0'
+gem 'private_pub'
+gem 'thin'
 gem 'faye-redis'
-gem 'thin' 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'

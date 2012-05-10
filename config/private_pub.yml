@@ -5,6 +5,6 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "panga.redistogo.com:9466"
-  secret_token: "eff5c73775bb3d69cc316dade243d065ea4820e10a83b097cc86c5e7d08f0822"
+  server: "http://example.com/faye"
+  secret_token: "20e092707770f6884de47f3ecf5b2a047267c6d0a01f90281971fc8820dcb1c2"
   signature_expiration: 3600 # one hour
