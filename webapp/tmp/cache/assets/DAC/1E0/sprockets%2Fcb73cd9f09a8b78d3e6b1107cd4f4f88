@@ -1,0 +1,32 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1336853231.652734:@value{	I"length:EFiI"digest;
+F"%b2e8e49f8bc4f1ffd94fc33be94131e7I"source;
+FI"/* line 1, /Users/danielmunerasanchez/Documents/Ruby/Reto4/app/assets/stylesheets/messages.css.scss */
+div#chat-container ul {
+  list-style: none;
+  padding: 0;
+  height: 150px;
+  border: solid 1px #777;
+  margin: 5px 0;
+  overflow: auto;
+}
+/* line 8, /Users/danielmunerasanchez/Documents/Ruby/Reto4/app/assets/stylesheets/messages.css.scss */
+div#chat-container ul li {
+  margin: 2px 5px;
+  padding: 0;
+}
+/* line 11, /Users/danielmunerasanchez/Documents/Ruby/Reto4/app/assets/stylesheets/messages.css.scss */
+div#chat-container ul li .created_at {
+  float: right;
+  color: #777;
+  font-size: 11px;
+  padding-left: 4px;
+  padding-top: 2px;
+}
+
+/* line 21, /Users/danielmunerasanchez/Documents/Ruby/Reto4/app/assets/stylesheets/messages.css.scss */
+input#message_content {
+  width: 240px;
+}
+;
+FI"_version;
+F"%f6d11b7bcd3ba70722b9478d3ab0f2e7

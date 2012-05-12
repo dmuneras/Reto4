@@ -1,0 +1,313 @@
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMessages (20120114225439)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120114225439')[0m
+Migrating to AddFromToMessage (20120505194702)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "messages" ADD "from" integer
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120505194702')[0m
+Migrating to CreateUsers (20120505203230)
+  [1m[35m (1.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "username" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120505203230')[0m
+Migrating to CreateChannels (20120507195256)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "channels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120507195256')[0m
+Migrating to AddChannelIdtoMessage (20120507195738)
+  [1m[35m (5.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120507195738')
+Migrating to AddToToMessage (20120507195835)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "messages" ADD "to" integer[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120507195835')
+Migrating to AddChannelIdToMessage (20120507224854)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "messages" ADD "channel_id" integer[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120507224854')
+Migrating to AddChannelIdToUser (20120512190238)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "channel_id" integer[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120512190238')
+  [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("channels")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("messages")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-12 15:07:11 -0500
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Rendered messages/index.html.erb within layouts/application (14.5ms)
+Compiled application.css  (2ms)  (pid 9565)
+Compiled channels.css  (4ms)  (pid 9565)
+Compiled messages.css  (6ms)  (pid 9565)
+Compiled sessions.css  (1ms)  (pid 9565)
+Compiled application.js  (6ms)  (pid 9565)
+Compiled jquery.js  (3ms)  (pid 9565)
+Compiled jquery_ujs.js  (0ms)  (pid 9565)
+Compiled private_pub.js  (0ms)  (pid 9565)
+Compiled channels.js  (101ms)  (pid 9565)
+Compiled messages.js  (93ms)  (pid 9565)
+Compiled sessions.js  (91ms)  (pid 9565)
+Completed 200 OK in 636ms (Views: 614.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /channels.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /messages.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /jquery.js - 304 Not Modified (61ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /private_pub.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /messages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /channels.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-12 15:07:12 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Rendered messages/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 150ms (Views: 92.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /sessions.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /messages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /channels.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /channels.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /messages.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /private_pub.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:40 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-05-12 15:09:43 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=tf07amydlrKGIbO4TSyv7nNHXQhCKtUmxAVyU7vYQA&oauth_verifier=Z1Ilxj4eBg8h25z5Ro4iCWC15nXmLfnB3TVERHEjo" for 127.0.0.1 at 2012-05-12 15:09:44 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"tf07amydlrKGIbO4TSyv7nNHXQhCKtUmxAVyU7vYQA", "oauth_verifier"=>"Z1Ilxj4eBg8h25z5Ro4iCWC15nXmLfnB3TVERHEjo", "provider"=>"twitter"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '190527413' LIMIT 1
+  [1m[36mSQL (61.4ms)[0m  [1mINSERT INTO "users" ("channel_id", "created_at", "provider", "uid", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["channel_id", nil], ["created_at", Sat, 12 May 2012 20:09:46 UTC +00:00], ["provider", "twitter"], ["uid", "190527413"], ["updated_at", Sat, 12 May 2012 20:09:46 UTC +00:00], ["username", "Daniel Múnera "]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 136ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+  Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Rendered messages/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 97ms (Views: 19.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /channels.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /messages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /application.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /private_pub.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /channels.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-12 15:09:46 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/channels" for 127.0.0.1 at 2012-05-12 15:09:54 -0500
+  Processing by ChannelsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "channel"=>{"name"=>"Deportes"}, "commit"=>"Crear"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "channels" WHERE "channels"."name" = 'Deportes' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "channels" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sat, 12 May 2012 20:09:54 UTC +00:00], ["name", "Deportes"], ["updated_at", Sat, 12 May 2012 20:09:54 UTC +00:00]]
+Rendered channels/create.js.erb (4.5ms)
+Completed 200 OK in 134ms (Views: 75.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/update_chat" for 127.0.0.1 at 2012-05-12 15:09:57 -0500
+  Processing by MessagesController#update_chat as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "channel_id"=>"1", "commit"=>"seleccionar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "channel_id" = 1, "updated_at" = '2012-05-12 20:09:57.801670' WHERE "users"."id" = 1[0m
+Rendered messages/update_chat.js.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 44.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/chat" for 127.0.0.1 at 2012-05-12 15:09:57 -0500
+  Processing by MessagesController#chat as HTML
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered collection (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered messages/chat.html.erb (57.4ms)
+Completed 200 OK in 111ms (Views: 61.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-05-12 15:10:00 -0500
+  Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "message"=>{"content"=>"Hola", "to"=>""}, "commit"=>"Enviar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["channel_id", 1], ["content", "Hola"], ["created_at", Sat, 12 May 2012 20:10:00 UTC +00:00], ["from", 1], ["to", nil], ["updated_at", Sat, 12 May 2012 20:10:00 UTC +00:00]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered messages/_message.html.erb (4.1ms)
+Rendered messages/create.js.erb (13.8ms)
+Completed 200 OK in 101ms (Views: 20.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-05-12 15:10:09 -0500
+  Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "message"=>{"content"=>"Hola Laura", "to"=>"1"}, "commit"=>"Enviar"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["channel_id", 1], ["content", "Hola Laura"], ["created_at", Sat, 12 May 2012 20:10:09 UTC +00:00], ["from", 1], ["to", 1], ["updated_at", Sat, 12 May 2012 20:10:09 UTC +00:00]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered messages/_message.html.erb (3.4ms)
+Rendered messages/create.js.erb (12.5ms)
+Completed 200 OK in 103ms (Views: 20.3ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/messages/2" for 127.0.0.1 at 2012-05-12 15:10:12 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 2]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 104ms (Views: 27.5ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/messages/1" for 127.0.0.1 at 2012-05-12 15:10:14 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 1]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 50ms (Views: 4.4ms | ActiveRecord: 2.2ms)
