@@ -42,13 +42,8 @@ class ChannelsController < ApplicationController
     @channel = Channel.new(params[:channel])
     respond_to do |format|
       if @channel.save
-        format.js {     
-            PrivatePub.publish_to(current_channel_route, "$('div#channel_list').load('/update_channels');")
-            @user_msg = "#{t(:new_channel_created)} : #{@channel.name}"
-            render :layout => false
-        }
+        format.js {@user_msg = "#{t(:new_channel_created)} : #{@channel.name}"}
         format.json { render json: @channel, status: :created, location: @channel }
-
       else
         @error_msg = @channel.errors.full_messages[0]
         format.js { render action: "errors" }
@@ -77,16 +72,10 @@ class ChannelsController < ApplicationController
   def destroy
     @channel = Channel.find(params[:id])
     @channel.destroy
-
     respond_to do |format|
       format.html { redirect_to channels_url }
       format.json { head :ok }
     end
-  end
-
-  def update_channels
-    @channels = Channel.all
-    render :layout => false
   end
 end
 

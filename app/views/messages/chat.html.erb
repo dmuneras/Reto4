@@ -2,7 +2,7 @@
 	<p>Seleccione canal para empezar</p>
 <% else %>
 	<h3><%= current_channel_route %></h3>
-	<ul id="chat">
+	<ul id="chat-<%= current_channel.id %>">
   		<%= render @messages %>
 	</ul>
 	<%= form_for Message.new, remote: true do |f| %>
@@ -12,4 +12,4 @@
 	<% end %>
 <% end %>
 <%= subscribe_to current_channel_route %>
-<%= subscribe_to current_user_channel if current_user %>
+	

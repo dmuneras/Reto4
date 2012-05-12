@@ -1,5 +1,7 @@
 $('form#new_channel')[0].reset();
-$('#msg-channel').css('display','block');
-$('#msg-channel').html("<%= j @user_msg %>");
-$('div#channel_list').load('/update_channels');
-$('#msg-channel').fadeOut(2000);
+<% publish_to '/messages' do %>
+	$('#msg-channel').css('display','block');
+	$('#msg-channel').html("<%= j @user_msg %>");
+	$('#msg-channel').fadeOut(2000);
+	$('select#channel_id').append("<option value = <%= @channel.id %> > <%= j @channel.name %></option>");
+<% end %>

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   
+  attr_accessor :subscriptions
+  
   has_many :created_msgs ,  :class_name => 'Message', :foreign_key => 'from'
   has_many :received_msgs , :class_name => 'Message', :foreign_key => 'to'
   

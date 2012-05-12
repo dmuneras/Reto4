@@ -15,10 +15,7 @@ class MessagesController < ApplicationController
           if @message.save
             format.js {
               if !(@message.to.nil?)
-                @channel_user = "#{current_channel_route}/#{@message.to_user.id}"
-                PrivatePub.publish_to(@channel_user, message: @message)
-              else
-                PrivatePub.publish_to(current_channel_route, message: @message)
+                @channel_user = "/messages/#{@message.to_user.id}"
               end
             }
           else
@@ -48,15 +45,19 @@ class MessagesController < ApplicationController
   end
   
   def destroy 
-    if current_user
-      Message.destroy params[:id]
-      PrivatePub.publish_to(current_channel_route, "location.reload();$('#channel_name').reset();")
-      redirect_to root_url, :notice => t(:successfully_d)
-    else
-      redirect_to root_url
+    respond_to do |format|
+      format.js{
+        if current_user
+          Message.destroy params[:id]
+          PrivatePub.publish_to(current_channel_route, "$('li#message-#{params[:id]}').remove();")
+          render :nothing => true
+        else
+          redirect_to root_url
+        end
+      }
     end
   end
-  
+
   def update_chat  
     unless params[:channel_id].blank? 
       session[:channel_id] = params[:channel_id] unless params[:channel_id].blank? 
@@ -68,11 +69,10 @@ class MessagesController < ApplicationController
   
   def chat
     @messages = Message.message_by_channel(current_channel, current_user) 
-    logger.info "====> Valid MESSAGE: #{@message}"
     @users = User.all
-    respond_to do |format|
+    respond_to do |format|  
       format.html{
-        render :layout => false
+             render :layout => false
       }
       format.json{
         chat_data = Hash.new

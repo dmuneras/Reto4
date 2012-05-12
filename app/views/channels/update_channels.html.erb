@@ -1,5 +1,0 @@
-<p><%= t(:choose_channel)%></p>
-<%= form_tag '/update_chat', remote: true do%>
-  <%= select_tag "channel_id", options_from_collection_for_select(@channels, "id", "name") %>
-  <%= submit_tag t(:choose)%>
-<% end %>

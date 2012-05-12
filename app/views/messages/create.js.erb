@@ -1,12 +1,18 @@
 <% if @channel_user %>
-	<% publish_to @channel_user do %>
-		//$("#chat").append("<%= escape_javascript render(@message) %>");
-		$("#chat-container").load("/chat");
+	<% if current_channel == @message.channel%>
+		<% publish_to @channel_user do %>
+			if ($("li#message-<%= @message.id %>")[0] == null){
+	        	$("#chat-<%= current_channel.id %>").append("<%= escape_javascript render(@message) %>");				
+			}
+		<% end %>
 	<% end %>
 <% else %>
-	<% publish_to current_channel_route do %>
-		//$("#chat").append("<%= escape_javascript render(@message) %>");
-		$("#chat-container").load("/chat");
-	<% end %>
+	<% if current_channel == @message.channel %>
+		<% publish_to current_channel_route do %>
+			if ($("li#message-<%= @message.id %>")[0] == null){
+	        	$("#chat-<%= current_channel.id %>").append("<%= escape_javascript render(@message) %>");				
+			}
+		<% end %>
+	<% end %>	
 <% end %>
 $("#new_message")[0].reset();
