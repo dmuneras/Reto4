@@ -10,6 +10,7 @@
   		<%= select_tag "message[to]", options_from_collection_for_select(@users, "id", "username"), {:include_blank => true} %>
   		<%= f.submit t(:send), :id => "create-msg" %>
 	<% end %>
+	<span id = "msg-chat"></span>
 <% end %>
 <%= subscribe_to current_channel_route %>
 	

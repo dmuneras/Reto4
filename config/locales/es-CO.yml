@@ -2,6 +2,9 @@
 # Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
 
 es-CO:
+  current_user_nil: "Amigo es mejor que este logueado, sino nada funciona"
+  content_presence_msg: "El contenido del mensaje no puede estar vacio"
+  name_channel_error: "El nombre del canal no puede estar vacio"
   said: "dijo"
   choose: "seleccionar"
   new_channel_selected: "nuevo canal seleccionado"

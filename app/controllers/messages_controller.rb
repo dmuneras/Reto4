@@ -1,8 +1,9 @@
 class MessagesController < ApplicationController
   before_filter :current_user? , :except => [:create_client, :chat, :index]
   def index 
-      @messages = Message.message_by_channel(current_channel,current_user) 
-      @users = User.all
+      flash[:error] = t(:current_user_nil) if current_user.nil?
+      @messages = Message.messages_by_channel(current_channel,current_user) 
+      @users = User.users_by_channel current_channel
       @channels = Channel.all  
   end
 
@@ -20,7 +21,7 @@ class MessagesController < ApplicationController
             }
           else
             @error_msg = @message.errors.full_messages[0]
-            format.js {render 'new'}
+            format.js {render 'create_error'}
           end
         rescue Exception => e
           @expection = e.message
@@ -60,16 +61,18 @@ class MessagesController < ApplicationController
 
   def update_chat  
     unless params[:channel_id].blank? 
-      session[:channel_id] = params[:channel_id] unless params[:channel_id].blank? 
+      session[:channel_id] = params[:channel_id] 
       @user_msg = "#{t(:new_channel_selected)} : #{current_channel.name}"
+      current_user.channel_id = params[:channel_id]
+      current_user.save
     else
       redirect_to root_url
     end
   end
   
   def chat
-    @messages = Message.message_by_channel(current_channel, current_user) 
-    @users = User.all
+    @messages = Message.messages_by_channel(current_channel, current_user) 
+    @users = User.users_by_channel current_channel
     respond_to do |format|  
       format.html{
              render :layout => false

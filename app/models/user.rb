@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   
-  attr_accessor :subscriptions
-  
+  belongs_to :channel
   has_many :created_msgs ,  :class_name => 'Message', :foreign_key => 'from'
   has_many :received_msgs , :class_name => 'Message', :foreign_key => 'to'
   
@@ -15,5 +14,9 @@ class User < ActiveRecord::Base
   
   def my_private_msg? msg
     return true if self.received_msgs.include? msg
+  end
+  
+  def self.users_by_channel channel
+    return User.all.select{|user| user.channel == channel}
   end
 end

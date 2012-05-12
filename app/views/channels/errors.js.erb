@@ -1,1 +1,3 @@
-alert("<%= @error_msg %>");
+$('#msg-channel').css('display','block');
+$("#msg-channel").html("<%= @error_msg %>");
+$('#msg-channel').fadeOut(2000);

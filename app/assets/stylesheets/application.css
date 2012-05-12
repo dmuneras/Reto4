@@ -88,7 +88,7 @@ form .field, form .actions {
   margin: 12px 0;
 }
 
-span#msg-update-chat, span#msg-channel{
+span#msg-update-chat, span#msg-channel , span#msg-chat{
 	display: none;
 	color: red;
 }

@@ -12,20 +12,12 @@
 
 $('document').ready(function(){
 	
-	$('#flash_error').css('display', 'none');
-	$('#flash_notice, #flash_error').animate({
+	$('#flash_notice').animate({
 			'opacity':'0',
 			'height' : '0px'
 	}, 2000);
 	$('form').submit(function(event){
 			event.preventDefault();
 			$('#flash_notice').css('display','block');
-			$('#flash_error').css('display','block');
-			$('#flash_error').css('opacity','1');
-			$('#flash_error').css('height','25px');
-			$('#flash_error').animate({
-				'opacity':'0',
-				'height' : '0px'
-			}, 2000);
 	});	
 });
