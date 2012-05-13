@@ -1,0 +1,10 @@
+<div id = "sessions-new">
+	<h2>Login usuarios locales</h2>
+	<%= form_tag '/local_login' do %>
+	<%= label_tag t(:username) %><br>
+	<%= text_field_tag "user[username]" %><br>
+	<%= label_tag t(:password) %><br>
+	<%= password_field_tag "user[password]" %><br>
+	<%= submit_tag "Login"%>
+	<% end %>
+</div>

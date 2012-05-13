@@ -33,6 +33,7 @@
 		<span id = "msg-chat"></span>
 	<% end %>
 </div>
+
 <%= subscribe_to '/messages' %>
 <% if current_user %>
 	<%= subscribe_to current_user_channel %>

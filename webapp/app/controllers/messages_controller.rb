@@ -1,10 +1,14 @@
 class MessagesController < ApplicationController
   before_filter :current_user? , :except => [:create_client, :chat, :index]
   def index 
-      flash[:error] = t(:current_user_nil) if current_user.nil?
-      @messages = Message.messages_by_channel(current_channel,current_user) 
-      @users = User.users_by_channel current_channel
-      @channels = Channel.all  
+    respond_to do |format| 
+      format.html{
+        flash[:error] = t(:current_user_nil) if current_user.nil?
+        @messages = Message.messages_by_channel(current_channel,current_user) 
+        @users = User.users_by_channel current_channel
+        @channels = Channel.all  
+      }
+    end
   end
 
   def create
@@ -35,13 +39,16 @@ class MessagesController < ApplicationController
 
   def create_client
     client = current_user_client(params[:client_username])
-    #channel = current_channel_client(params[:channel_id])
     if client
       @message = Message.create! params[:message]  
       @message.from = client.id
       @message.save
-      format.js {PrivatePub.publish_to(current_channel_route, message: @message)}
-      render 'create'
+      respond_to do |format|
+        
+      format.js {
+        render 'create_from_client'
+      }
+      end
     end
   end
   

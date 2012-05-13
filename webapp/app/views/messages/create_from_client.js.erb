@@ -1,0 +1,10 @@
+<% publish_to "/messages/new/#{@message.channel.name}" do %>
+	if ($("li#message-<%= @message.id %>")[0] == null){
+		var msg = "<li id = 'message-<%= @message.id%>'><span class='created_at'><%= @message.created_at.strftime('%H:%M') %>"+
+				  "</span><%= @message.from_user.username %> : <%= @message.content %> " +
+				  "<a href = '/messages/<%= @message.id %>' data-confirm='Esta seguro?' data-method='delete'" +
+				  " data-remote='true' rel='nofollow'><%=t(:delete)%></a></li>";
+		$('#chat-<%= @message.channel_id %>').append(msg);
+	}	
+<% end %>
+	

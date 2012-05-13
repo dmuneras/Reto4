@@ -3,18 +3,48 @@ class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-    session[:user_id] = user.id
-    redirect_to root_url, :notice => t(:signed_in)
+    respond_to do |format|
+      format.html {
+        session[:user_id] = user.id
+        redirect_to root_url, :notice => t(:signed_in)
+      }
+      format.json{
+        if user
+          render json: user
+        else
+          render json: false
+        end
+      }
+    end
   end
 
-  def login_from_desktop
+  def local_login
     respond_to do |format|
-      format.json{
-        user = User.find_by_username params[:user][:username]
-        if user.nil?
-          user = User.create!(params[:user])
+      format.html{
+        user = User.find_by_username params["user"]["username"]
+        if user
+          if user.password.eql?  Digest::MD5.hexdigest(params["user"]["password"])
+            session[:user_id] = user.id
+            redirect_to root_url, :notice => t(:signed_in)
+          else
+            render json: false
+          end
+        else
+          redirect_to root_url
         end
-        render json: user
+
+      }
+      format.json{
+        user = User.find_by_username params["user"]["username"]
+        if user
+          if user.password.eql? params["user"]["password"]
+            render json: true
+          else
+            render json: false
+          end
+        else
+          render json: "Invalid username" 
+        end
       }
     end
   end
@@ -23,5 +53,8 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     session[:channel_id] = nil
     redirect_to root_url, :notice => t(:signed_out)
+  end
+  
+  def new
   end
 end

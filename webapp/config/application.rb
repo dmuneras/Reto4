@@ -1,5 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
+require 'digest/md5'
 require 'rails/all'
 
 if defined?(Bundler)

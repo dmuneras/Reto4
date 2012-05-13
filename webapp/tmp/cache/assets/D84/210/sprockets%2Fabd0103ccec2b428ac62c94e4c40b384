@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1336853232.1339872:@value{	I"length:EFiðI"digest;
-F"%6a9fff5d3e6ad9fe42dfdd6f278452e5I"source;
-FI"ð/*!
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1336878390.5009658:@value{	I"length:EFiòI"digest;
+F"%0f99442ae801bc47a3b780d2d7b32e74I"source;
+FI"ò/*!
  * jQuery JavaScript Library v1.7.1
  * http://jquery.com/
  *
@@ -9742,10 +9742,10 @@ $('document').ready(function(){
 			'height' : '0px'
 	}, 2000);
 	$('form').submit(function(event){
-			event.preventDefault();
+			//event.preventDefault();
 			$('#flash_notice').css('display','block');
 	});	
 });
 ;
 FI"_version;
-F"%9bcda634eeb59d83c91f73aa49c87bba
+F"%8b078445b154b0808a8ee0e4f65f29c8

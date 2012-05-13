@@ -11,10 +11,12 @@
 	  <div id = "usernav">
 	  	<% if current_user %>
 		  Welcome <%= current_user.username %>
-		  <%= link_to t(:sign_out), signout_path %>
+		  <%= link_to t(:sign_out), signout_path %> |
+		  <%= link_to t(:register), new_user_path %>
 		<% else %>
 		  <%= link_to t(:sign_in_twitter), "/auth/twitter" %> |
-		  <%= link_to t(:sign_in_facebook), "/auth/facebook" %>
+		  <%= link_to t(:sign_in_facebook), "/auth/facebook" %> |
+		  <%= link_to t(:sign_in_local), "/local_login_form" %>
 		<% end %>
 	  </div>
       <% flash.each do |name, msg| %>

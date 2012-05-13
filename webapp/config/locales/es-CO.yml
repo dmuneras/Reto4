@@ -2,6 +2,7 @@
 # Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
 
 es-CO:
+  user_was_successfully_created: "Usuario creado satisfactoriamente"
   current_user_nil: "Amigo es mejor que este logueado, sino nada funciona"
   content_presence_msg: "El contenido del mensaje no puede estar vacio"
   name_channel_error: "El nombre del canal no puede estar vacio"
@@ -15,6 +16,7 @@ es-CO:
   yanli: "Usted no ha iniciado sesion"
   sign_in_twitter: "Ingresar con twitter"
   sign_in_facebook: "Ingresar con facebook"
+  sign_in_local: "Ingresar con usuario local"
   signed_in: "Bienvenido"
   signed_out: "Hasta pronto"
   sign_out: "Salir"

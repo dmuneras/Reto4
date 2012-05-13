@@ -17,7 +17,7 @@ $('document').ready(function(){
 			'height' : '0px'
 	}, 2000);
 	$('form').submit(function(event){
-			event.preventDefault();
+			//event.preventDefault();
 			$('#flash_notice').css('display','block');
 	});	
 });

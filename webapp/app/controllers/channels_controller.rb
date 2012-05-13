@@ -6,8 +6,9 @@ class ChannelsController < ApplicationController
     @channels = Channel.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html{ current_user?} # index.html.erb
       format.json { render json: @channels }
+      format.xml {render xml: @channels}
     end
   end
 
