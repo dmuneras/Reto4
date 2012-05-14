@@ -80,15 +80,19 @@ class MessagesController < ApplicationController
   end
   
   def chat
-    @messages = Message.messages_by_channel(current_channel, current_user) 
-    @users = User.users_by_channel current_channel
     respond_to do |format|  
       format.html{
-             render :layout => false
+        @messages = Message.messages_by_channel(current_channel, current_user) 
+        @users = User.users_by_channel current_channel
+        render :layout => false
       }
       format.json{
         chat_data = Hash.new
-        chat_data = {:msgs => @messages, :users => @users, :channel => current_channel_route}
+        channel = Channel.find_by_name(params["channel"])
+        user = User.find_by_username(params["username"])
+        @messages = Message.messages_by_channel(channel, user) 
+        @users = User.users_by_channel channel
+        chat_data = {:msgs => @messages, :users => @users}
         render json: chat_data
       }
     end

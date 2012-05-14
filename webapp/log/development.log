@@ -17914,3 +17914,1381 @@ Served asset /messages.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 08:26:19 -0500
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/update_chat" for 127.0.0.1 at 2012-05-14 08:27:39 -0500
+  Processing by MessagesController#update_chat as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "channel_id"=>"1", "commit"=>"seleccionar"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 08:27:39 -0500
+  Processing by MessagesController#index as JS
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Rendered messages/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 82ms (Views: 52.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-05-14 08:27:40 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=NQjefBwqWJoX0WGqkK65QGKjkitgomVuaxOW2lORh8&oauth_verifier=TMVXWsHO9m8Cfs1tys1q4uDypwEfPeZtLSJtMjutc" for 127.0.0.1 at 2012-05-14 08:27:41 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"NQjefBwqWJoX0WGqkK65QGKjkitgomVuaxOW2lORh8", "oauth_verifier"=>"TMVXWsHO9m8Cfs1tys1q4uDypwEfPeZtLSJtMjutc", "provider"=>"twitter"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '190527413' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+  Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Rendered messages/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 52ms (Views: 18.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /channels.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /channels.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:43 -0500
+Served asset /private_pub.js - 304 Not Modified (0ms)
+
+
+Started POST "/update_chat" for 127.0.0.1 at 2012-05-14 08:27:47 -0500
+  Processing by MessagesController#update_chat as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "channel_id"=>"1", "commit"=>"seleccionar"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."username" = 'Daniel Múnera ' AND "users"."id" != 25) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered messages/update_chat.js.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 14.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/chat" for 127.0.0.1 at 2012-05-14 08:27:48 -0500
+  Processing by MessagesController#chat as HTML
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered collection (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered messages/chat.html.erb (13.8ms)
+Completed 200 OK in 59ms (Views: 17.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-05-14 08:27:54 -0500
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 08:27:54 -0500
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Rendered messages/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 49ms (Views: 17.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /channels.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /private_pub.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /channels.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 08:27:55 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/local_login_form" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /channels.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /channels.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /private_pub.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:30 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:31 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/local_login" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+  Processing by SessionsController#local_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+  Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 26]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Rendered messages/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 90ms (Views: 54.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /channels.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /messages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /private_pub.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /channels.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:35 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Rendered messages/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 97ms (Views: 20.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /channels.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /private_pub.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /channels.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 09:11:37 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:30:58 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 159ms (Views: 1.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:31:46 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 27ms (Views: 1.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:32:29 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 60ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:33:29 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:33:44 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 61ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:34:27 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:34:49 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:39:18 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 26ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:39:31 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 09:39:31 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:40:17 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 09:40:17 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:40:41 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 57ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 09:40:41 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:48:13 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 58ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 09:48:13 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:51:20 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 56ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 09:51:20 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:55:19 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 27ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 09:55:19 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 09:58:28 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 09:58:28 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:00:10 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 26ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:00:10 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:01:35 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:01:35 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:02:08 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 27ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:02:08 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:02:59 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:02:59 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:03:33 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 59ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:03:33 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:04:32 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 61ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:04:32 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:05:34 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 56ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:05:34 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/message_client/" for 127.0.0.1 at 2012-05-14 10:05:49 -0500
+  Processing by MessagesController#create_client as */*
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "message"=>{"content"=>"Hola", "from"=>"carlos", "channel_id"=>"1", "to"=>nil}, "client_username"=>"carlos", "agent"=>"desktop", "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+  [1m[35mSQL (44.7ms)[0m  INSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["channel_id", 1], ["content", "Hola"], ["created_at", Mon, 14 May 2012 15:05:49 UTC +00:00], ["from", 0], ["to", nil], ["updated_at", Mon, 14 May 2012 15:05:49 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mUPDATE "messages" SET "from" = 26, "updated_at" = '2012-05-14 15:05:49.917810' WHERE "messages"."id" = 93[0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+Rendered messages/create_from_client.js.erb (89.8ms)
+Completed 200 OK in 259ms (Views: 139.6ms | ActiveRecord: 46.5ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2012-05-14 10:10:42 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=at85DWVlDgFIvSVXrwZMGa4XGB5kX3i57x6d1e6RU&oauth_verifier=ma8UNTlbDzOCDEmZM0SDFh3EC3NaLWhJiQ1D8XzDQ" for 127.0.0.1 at 2012-05-14 10:10:43 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"at85DWVlDgFIvSVXrwZMGa4XGB5kX3i57x6d1e6RU", "oauth_verifier"=>"ma8UNTlbDzOCDEmZM0SDFh3EC3NaLWhJiQ1D8XzDQ", "provider"=>"twitter"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '190527413' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 10:10:44 -0500
+  Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Rendered messages/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 129ms (Views: 40.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /channels.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /messages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /sessions.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /messages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /channels.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /private_pub.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 10:10:45 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/update_chat" for 127.0.0.1 at 2012-05-14 10:10:49 -0500
+  Processing by MessagesController#update_chat as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "channel_id"=>"1", "commit"=>"seleccionar"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."username" = 'Daniel Múnera ' AND "users"."id" != 25) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered messages/update_chat.js.erb (0.6ms)
+Completed 200 OK in 149ms (Views: 16.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/chat" for 127.0.0.1 at 2012-05-14 10:10:49 -0500
+  Processing by MessagesController#chat as HTML
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+Rendered messages/_message.html.erb (4.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered messages/chat.html.erb (15.8ms)
+Completed 200 OK in 69ms (Views: 19.5ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/messages/93" for 127.0.0.1 at 2012-05-14 10:10:53 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"93"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", "93"]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 93]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 76ms (Views: 25.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:11:10 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:11:10 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:16:11 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 62ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:16:11 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:17:14 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 61ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:17:14 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:17:43 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 61ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:17:43 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:18:11 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:18:11 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:18:58 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:18:58 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.4ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/message_client/" for 127.0.0.1 at 2012-05-14 10:19:29 -0500
+  Processing by MessagesController#create_client as */*
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "message"=>{"content"=>"Hola desde el nuevo cliente recargado", "from"=>"carlos", "channel_id"=>"1", "to"=>nil}, "client_username"=>"carlos", "agent"=>"desktop", "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["channel_id", 1], ["content", "Hola desde el nuevo cliente recargado"], ["created_at", Mon, 14 May 2012 15:19:29 UTC +00:00], ["from", 0], ["to", nil], ["updated_at", Mon, 14 May 2012 15:19:29 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  UPDATE "messages" SET "from" = 26, "updated_at" = '2012-05-14 15:19:29.755845' WHERE "messages"."id" = 94
+  [1m[36mChannel Load (0.3ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+Rendered messages/create_from_client.js.erb (59.9ms)
+Completed 200 OK in 108ms (Views: 66.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/message_client/" for 127.0.0.1 at 2012-05-14 10:19:52 -0500
+  Processing by MessagesController#create_client as */*
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "message"=>{"content"=>"Hola pablo como vas", "from"=>"carlos", "channel_id"=>"1", "to"=>nil}, "client_username"=>"carlos", "agent"=>"desktop", "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["channel_id", 1], ["content", "Hola pablo como vas"], ["created_at", Mon, 14 May 2012 15:19:52 UTC +00:00], ["from", 0], ["to", nil], ["updated_at", Mon, 14 May 2012 15:19:52 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mUPDATE "messages" SET "from" = 26, "updated_at" = '2012-05-14 15:19:52.745469' WHERE "messages"."id" = 95[0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+Rendered messages/create_from_client.js.erb (59.1ms)
+Completed 200 OK in 369ms (Views: 65.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/message_client/" for 127.0.0.1 at 2012-05-14 10:25:56 -0500
+  Processing by MessagesController#create_client as */*
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "message"=>{"content"=>"Hola a todos caballeros", "from"=>"carlos", "channel_id"=>"1", "to"=>nil}, "client_username"=>"carlos", "agent"=>"desktop", "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["channel_id", 1], ["content", "Hola a todos caballeros"], ["created_at", Mon, 14 May 2012 15:25:56 UTC +00:00], ["from", 0], ["to", nil], ["updated_at", Mon, 14 May 2012 15:25:56 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  UPDATE "messages" SET "from" = 26, "updated_at" = '2012-05-14 15:25:56.364420' WHERE "messages"."id" = 96
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+Rendered messages/create_from_client.js.erb (55.2ms)
+Completed 200 OK in 104ms (Views: 61.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 10:26:43 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 26ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 10:26:44 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/message_client/" for 127.0.0.1 at 2012-05-14 10:27:03 -0500
+  Processing by MessagesController#create_client as */*
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "message"=>{"content"=>"Ahora confirma que lo envio", "from"=>"carlos", "channel_id"=>"1", "to"=>nil}, "client_username"=>"carlos", "agent"=>"desktop", "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["channel_id", 1], ["content", "Ahora confirma que lo envio"], ["created_at", Mon, 14 May 2012 15:27:03 UTC +00:00], ["from", 0], ["to", nil], ["updated_at", Mon, 14 May 2012 15:27:03 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mUPDATE "messages" SET "from" = 26, "updated_at" = '2012-05-14 15:27:03.788800' WHERE "messages"."id" = 97[0m
+  [1m[35mChannel Load (0.3ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+Rendered messages/create_from_client.js.erb (62.2ms)
+Completed 200 OK in 110ms (Views: 68.5ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:08:45 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:08:47 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 60ms (Views: 1.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:08:47 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/message_client/" for 127.0.0.1 at 2012-05-14 13:09:15 -0500
+  Processing by MessagesController#create_client as */*
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "message"=>{"content"=>"Hola mundo otra vez", "from"=>"carlos", "channel_id"=>"1", "to"=>nil}, "client_username"=>"carlos", "agent"=>"desktop", "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["channel_id", 1], ["content", "Hola mundo otra vez"], ["created_at", Mon, 14 May 2012 18:09:15 UTC +00:00], ["from", 0], ["to", nil], ["updated_at", Mon, 14 May 2012 18:09:15 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mUPDATE "messages" SET "from" = 26, "updated_at" = '2012-05-14 18:09:15.141317' WHERE "messages"."id" = 98[0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+Rendered messages/create_from_client.js.erb (19.7ms)
+Completed 200 OK in 101ms (Views: 25.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 13:09:22 -0500
+  Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+Rendered messages/_message.html.erb (15.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 197ms (Views: 36.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/channels.css?body=1" for 127.0.0.1 at 2012-05-14 13:09:22 -0500
+Served asset /channels.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-05-14 13:09:22 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/channels.js?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /channels.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_pub.js?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /private_pub.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+  Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mChannel Load (0.7ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMessage Load (2.4ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+Rendered messages/_message.html.erb (12.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 139ms (Views: 74.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-14 13:09:23 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started POST "/update_chat" for 127.0.0.1 at 2012-05-14 13:09:33 -0500
+  Processing by MessagesController#update_chat as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "channel_id"=>"1", "commit"=>"seleccionar"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."username" = 'Daniel Múnera ' AND "users"."id" != 25) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered messages/update_chat.js.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 11.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/chat" for 127.0.0.1 at 2012-05-14 13:09:33 -0500
+  Processing by MessagesController#chat as HTML
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1
+Rendered messages/_message.html.erb (48.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered messages/chat.html.erb (54.1ms)
+Completed 200 OK in 112ms (Views: 58.2ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/messages/98" for 127.0.0.1 at 2012-05-14 13:09:56 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"98"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", "98"]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 98]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 49ms (Views: 3.5ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/messages/97" for 127.0.0.1 at 2012-05-14 13:09:58 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"97"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1[0m  [["id", "97"]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 97]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 47ms (Views: 4.0ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/messages/96" for 127.0.0.1 at 2012-05-14 13:10:01 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"96"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", "96"]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 96]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 50ms (Views: 4.4ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/messages/95" for 127.0.0.1 at 2012-05-14 13:10:24 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"95"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1[0m  [["id", "95"]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 95]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 170ms (Views: 4.3ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/messages/94" for 127.0.0.1 at 2012-05-14 13:10:27 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", "94"]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 94]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 84ms (Views: 4.0ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:18:45 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 27ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:18:45 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:19:35 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>nil, "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 200 OK in 16ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:20:16 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 60ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:20:16 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:21:16 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 60ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:21:16 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:21:43 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:21:43 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:21:50 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+Completed 200 OK in 68ms (Views: 1.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:24:16 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+===> PARAMETROS ENVIADOS   =  Deportes y carlos
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+Completed 200 OK in 32ms (Views: 1.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-05-14 13:25:46 -0500
+  Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVyYbw3PV1G8Nxx74FYulj26iWptD8ReLW8KyK+LkmE=", "message"=>{"content"=>"Hola mi amigo", "to"=>""}, "commit"=>"Enviar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "messages" ("channel_id", "content", "created_at", "from", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["channel_id", 1], ["content", "Hola mi amigo"], ["created_at", Mon, 14 May 2012 18:25:46 UTC +00:00], ["from", 25], ["to", nil], ["updated_at", Mon, 14 May 2012 18:25:46 UTC +00:00]]
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 25 LIMIT 1[0m
+Rendered messages/_message.html.erb (5.2ms)
+Rendered messages/create.js.erb (14.9ms)
+Completed 200 OK in 69ms (Views: 23.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:26:04 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+===> PARAMETROS ENVIADOS   =  Deportes y carlos
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+==>  RESULTADO : [] y 
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+Completed 200 OK in 42ms (Views: 1.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:28:56 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+===> PARAMETROS ENVIADOS   =  Deportes y carlos
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."name" = 'Deportes' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+==>  RESULTADO : [#<Message id: 99, content: "Hola mi amigo", created_at: "2012-05-14 18:25:46", updated_at: "2012-05-14 18:25:46", from: 25, to: nil, channel_id: 1>] y [#<User id: 25, provider: "twitter", uid: "190527413", username: "Daniel Múnera ", created_at: "2012-05-13 03:55:50", updated_at: "2012-05-14 13:26:05", channel_id: 1, password: nil>, #<User id: 26, provider: "local", uid: nil, username: "carlos", created_at: "2012-05-13 03:56:00", updated_at: "2012-05-13 04:00:20", channel_id: 1, password: "dc599a9972fde3045dab59dbd1ae170b">]
+Completed 200 OK in 51ms (Views: 2.0ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:30:02 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 60ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:30:02 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:30:08 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."name" = 'Deportes' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+Completed 200 OK in 53ms (Views: 2.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:32:23 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 63ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:32:23 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:32:27 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."name" = 'Deportes' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mChannel Load (0.2ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 83ms (Views: 2.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:32:53 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+Completed 200 OK in 28ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:32:53 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" [0m
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:32:58 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."name" = 'Deportes' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" 
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+Completed 200 OK in 86ms (Views: 2.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/local_login.json" for 127.0.0.1 at 2012-05-14 13:33:51 -0500
+  Processing by SessionsController#local_login as JSON
+  Parameters: {"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=", "user"=>{"username"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Enviar"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1[0m
+Completed 200 OK in 27ms (Views: 1.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/channels.json" for 127.0.0.1 at 2012-05-14 13:33:51 -0500
+  Processing by ChannelsController#index as JSON
+  [1m[35mChannel Load (0.1ms)[0m  SELECT "channels".* FROM "channels" 
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-05-14 13:33:55 -0500
+  Processing by MessagesController#chat as JSON
+  Parameters: {"username"=>"carlos", "channel"=>"Deportes"}
+  [1m[36mChannel Load (0.1ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."name" = 'Deportes' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'carlos' LIMIT 1
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  [1m[35mChannel Load (0.4ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 86ms (Views: 2.5ms | ActiveRecord: 2.0ms)

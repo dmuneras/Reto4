@@ -37,11 +37,13 @@ class SessionsController < ApplicationController
       format.json{
         user = User.find_by_username params["user"]["username"]
         if user
+          response = Hash.new
           if user.password.eql? params["user"]["password"]
-            render json: true
+            response = {:res => true}
           else
-            render json: false
+            response = {:res => false}
           end
+          render json: response
         else
           render json: "Invalid username" 
         end
