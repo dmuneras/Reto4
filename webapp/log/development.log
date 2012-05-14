@@ -19292,3 +19292,15 @@ Started GET "/chat.json?username=carlos&channel=Deportes" for 127.0.0.1 at 2012-
   [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = 1 LIMIT 1[0m
 Completed 200 OK in 86ms (Views: 2.5ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/messages/99" for 127.0.0.1 at 2012-05-14 13:34:49 -0500
+  Processing by MessagesController#destroy as JS
+  Parameters: {"id"=>"99"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1[0m  [["id", "99"]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 99]]
+  [1m[36mChannel Load (0.2ms)[0m  [1mSELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "channels".* FROM "channels" WHERE "channels"."id" = ? LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 47ms (Views: 3.9ms | ActiveRecord: 2.0ms)

@@ -80,17 +80,3 @@ module Services
 
 end
 
-
-
-
-
-
-
- 
-
-
-
-  #user = {:username => "carlos", :pwd => "carlos"}
-  #login user
-  #send_message "No se muevan, ya regresamos y me canse" , "carlos" ,  1 , nil
-
