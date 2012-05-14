@@ -3,6 +3,7 @@ require 'services'
 require 'userMsgs'
 require 'yaml'
 require "highline/import"
+require 'thread'
 
 class User 
   
@@ -12,6 +13,8 @@ class User
   def initialize(username)
     config = YAML.load_file(File.expand_path("./config/config.yml"))
     @provider = config["server"] 
+    @msgs_queue = Queue.new
+    @last_ask = DateTime.now
     puts "Conectando a #{@provider}"
     @username, @online = username[0], false
     main_loop
@@ -23,13 +26,15 @@ class User
     while !(@online)
       pwd = ask("Ingrese clave: ") {|q| q.echo = "x"} 
       @online = login(@username, pwd , "#{@provider}/local_login.json")
+      puts "Intente de nuevo ... "unless @online
     end
     puts "Bienvenido #{@username}"
     puts "Estos son los canales disponibles"
     @channels = get_from_server "#{@provider}/channels.json"
     for channel in @channels
-       puts channel["name"]
+       puts "=>" << channel["name"]
     end
+    update_from_server
     while @online
       read_from_console
     end
@@ -50,7 +55,7 @@ class User
      elsif cmd =~ /enviar:/
        send_msg cmd
      elsif cmd.eql? "usuarios"
-       
+       puts channels_user
      else
        puts "Comando erroneo" 
      end
@@ -67,7 +72,7 @@ class User
    end
    
    def send_msg msg
-     unless @current_channel.nil?
+     if @current_channel
         msg = msg.split
         msg = msg - [msg[0]]
         channel = @channels.select{|channel| channel["name"].eql? @current_channel}
@@ -77,4 +82,36 @@ class User
      end
    end
 
+   def channels_user
+    if @current_channel
+      result = ""
+      for user in @channel_info["users"]
+        result << "=> #{user["username"]}\n"
+      end
+      return result
+    else
+     return "No ha seleccionado canal"
+    end
+   end
+   def update_from_server
+     @ask = Thread.new do
+       while @online 
+         if @current_channel
+           @channel_info = get_from_server "#{@provider}/chat.json?username=#{@username}&channel=#{@current_channel}"
+           for msg in @channel_info["msgs"]
+             @msgs_queue << msg if ((DateTime.strptime(msg['created_at'])) <=> @last_ask) == 1
+           end
+           if @msgs_queue.size > 0
+             @msgs_queue.size.times do
+                msg = @msgs_queue.pop
+                user = @channel_info["users"].select{|user| user["id"] == msg["from"]}[0]
+                puts "#{user["username"]} : #{msg['content']} ,   enviado => #{msg['created_at']}"
+              end
+           end
+           @last_ask = DateTime.now
+           sleep(1)
+         end
+       end
+     end
+  end
 end
