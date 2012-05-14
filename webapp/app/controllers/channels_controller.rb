@@ -1,5 +1,6 @@
 class ChannelsController < ApplicationController
    before_filter :current_user? , :except => [:index]
+
   # GET /channels
   # GET /channels.json
   def index

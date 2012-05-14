@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+
   before_filter :current_user? , :except => [:create_client, :chat, :index]
   def index 
     respond_to do |format| 
@@ -72,6 +73,7 @@ class MessagesController < ApplicationController
       @user_msg = "#{t(:new_channel_selected)} : #{current_channel.name}"
       current_user.channel_id = params[:channel_id]
       current_user.save
+      PrivatePub.publish_to(current_channel_route, "$('#message_to').append(\"<option value = '#{current_user.id}'>#{current_user.username}</option>\");")
     else
       redirect_to root_url
     end
