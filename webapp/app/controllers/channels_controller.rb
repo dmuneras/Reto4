@@ -1,13 +1,14 @@
 class ChannelsController < ApplicationController
-   before_filter :current_user? , :except => [:index]
+  
+  
+  before_filter :current_user? , :except => [:index]
 
   # GET /channels
   # GET /channels.json
   def index
     @channels = Channel.all
-
     respond_to do |format|
-      format.html{ current_user?} # index.html.erb
+      format.html # index.html.erb
       format.json { render json: @channels }
       format.xml {render xml: @channels}
     end
@@ -49,7 +50,9 @@ class ChannelsController < ApplicationController
         format.json { render json: @channel, status: :created, location: @channel }
         format.html{
            PrivatePub.publish_to('/messages',
-           "$('select#channel_id').append('<option value = #{@channel.id} > #{@channel.name}</option>')")
+           "$('select#channel_id').append('<option value = #{@channel.id} > #{@channel.name}</option>');
+           $('#msg-channel').css('display','block');$('#msg-channel').html('se ha creado un nuevo canal');
+           $('#msg-channel').fadeOut(2000);")
            redirect_to channels_path
         }
       else
@@ -82,10 +85,16 @@ class ChannelsController < ApplicationController
     @channel = Channel.find(params[:id])
     @channel.destroy
     respond_to do |format|
-      format.html { redirect_to channels_url }
+      format.html { 
+        PrivatePub.publish_to('/messages', "$(\"#channel_id option:regex(value,#{@channel.id})\").remove();
+        $('#msg-channel').css('display','block');$('#msg-channel').html('se ha eliminado un nuevo canal');
+        $('#msg-channel').fadeOut(2000);")
+        redirect_to channels_url
+      }
       format.json { head :ok }
     end
   end
+  
 end
 
 

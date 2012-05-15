@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1337033627.035867:@value{	I"length:EFiŽÕI"digest;
-F"%12dc7ca68e8e02992f93c1b05656204aI"source;
-FI"ŽÕ/*!
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1337098218.379724:@value{	I"length:EFiÿ×I"digest;
+F"%f7ed62ebba1e2015d59973b334bbdaf8I"source;
+FI"ÿ×/*!
  * jQuery JavaScript Library v1.7.1
  * http://jquery.com/
  *
@@ -11590,6 +11590,18 @@ var PrivatePub = buildPrivatePub(document);
 // the compiled file.
 //
 
+jQuery.expr[':'].regex = function(elem, index, match) {
+    var matchParams = match[3].split(','),
+        validLabels = /^(data|css):/,
+        attr = {
+            method: matchParams[0].match(validLabels) ? 
+                        matchParams[0].split(':')[0] : 'attr',
+            property: matchParams.shift().replace(validLabels,'')
+        },
+        regexFlags = 'ig',
+        regex = new RegExp(matchParams.join('').replace(/^\s+|\s+$/g,''), regexFlags);
+    return regex.test(jQuery(elem)[attr.method](attr.property));
+}
 
 $('document').ready(function(){
 	
@@ -11597,11 +11609,15 @@ $('document').ready(function(){
 			'opacity':'0',
 			'height' : '0px'
 	}, 2000);
+	$('#flash_error').animate({
+			'opacity':'0',
+			'height' : '0px'
+	}, 2000);
 	$('form').submit(function(event){
 			//event.preventDefault();
-			$('#flash_notice').css('display','block');
+			$('#flash_notice','#flash_error').css('display','block');
 	});	
 });
 ;
 FI"_version;
-F"%116e43df56c59dd74b7287955a61fb09
+F"%5cdb784ba03c633828ca62fc5833f28d

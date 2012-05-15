@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
    validates :username, :uniqueness => {:message => I18n.t(:name_unique_user_error)}
   
-  attr_accessible  :password, :password_confirmation,:username , :roles_mask , :provider, :roles
+  attr_accessible  :password, :password_confirmation,:username , :roles_mask , :provider, :roles, :channel_id
   
   ROLES = %w[admin user]
    

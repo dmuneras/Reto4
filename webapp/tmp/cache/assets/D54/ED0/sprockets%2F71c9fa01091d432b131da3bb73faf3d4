@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1337053113.02511:@value{	I"length:EFiAI"digest;
-F"%1210ab6195470ed3b5000cddc3aba41eI"source;
-FI"A/*
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1337097942.746349:@value{	I"length:EFiAI"digest;
+F"%f4bb96bb9d0d04368a27ce34e18c2082I"source;
+FI"A/*
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
@@ -90,7 +90,7 @@ form .field, form .actions {
   margin: 12px 0;
 }
 
-span#msg-update-chat, span#msg-chat{
+span#msg-update-chat, span#msg-chat, span#msg-channel{
 	display: none;
 	color: red;
 }
@@ -8007,4 +8007,4 @@ input#message_content {
 }
 ;
 FI"_version;
-F"%2728e5d3ef622acbba6475d9234a2057
+F"%4aff4e0b95d168935685915403cc71f9

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 
-
+  skip_before_filter :verify_authenticity_token
+  
+  #load_and_authorize_resource
+  before_filter :current_user? , :except => [:register_client, :register_channel]
+  
   def index
     @users = User.all
   end
@@ -44,13 +48,11 @@ class UsersController < ApplicationController
 
   end
   
-  # GET /channels/1/edit
+ 
   def edit
     @user = User.find(params[:id])
   end
   
-  # PUT /channels/1
-   # PUT /channels/1.json
    def update
      @user = User.find(params[:id])
      respond_to do |format|
@@ -61,6 +63,18 @@ class UsersController < ApplicationController
          format.html { render action: "edit" }
          format.json { render json: @user.errors, status: :unprocessable_entity }
        end
+     end
+   end
+   
+   def register_channel
+     respond_to do |format|
+      format.json{
+        user = User.find params["user"]["id"]
+        user.channel_id = params["user"]["channel_id"]
+        r = user.save
+        logger.info "=============== SE GUARDO #{r}"
+        render json: true
+      }
      end
    end
 

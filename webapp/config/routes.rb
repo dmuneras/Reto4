@@ -13,6 +13,6 @@ Chatter::Application.routes.draw do
   match "/update_chat" => "messages#update_chat"
   match "/message_client" => "messages#create_client"
   match '/chat' => "messages#chat"
-    
+  match "/register_channel" => "users#register_channel"
   root to: 'messages#index'
 end

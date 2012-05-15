@@ -96,6 +96,14 @@ class MessagesController < ApplicationController
       }
     end
   end
+  
+  def channels_list
+    @channels = Channel.all
+    respond_to do |format|
+      format.json { render json: @channels }
+      format.xml {render xml: @channels}
+    end 
+  end
 end
 
 

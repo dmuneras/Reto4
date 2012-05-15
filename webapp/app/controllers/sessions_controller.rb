@@ -27,7 +27,8 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to root_url, :notice => t(:signed_in)
           else
-            redirect_to local_login_form_path, :notice => "Datos incorrectos"
+            flash[:error] = "Datos incorrectos"
+            redirect_to local_login_form_path
           end
         else
           redirect_to root_url
@@ -39,7 +40,7 @@ class SessionsController < ApplicationController
         if user
           response = Hash.new
           if user.password.eql? params["user"]["password"]
-            response = {:res => true}
+            response = {:res => true, :user_id => user.id}
           else
             response = {:res => false}
           end
@@ -52,11 +53,25 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    session[:channel_id] = nil
-    redirect_to root_url, :notice => t(:signed_out)
+    respond_to do |format|
+    format.html{current_user.channel_id = nil
+      current_user.save
+      session[:user_id] = nil
+      session[:channel_id] = nil
+      redirect_to root_url, :notice => t(:signed_out)
+    }
+    format.json{
+      user = User.find_by_username params["user"]["username"]
+      if user
+        user.channel_id = nil
+        user.save
+      end
+      render json: true
+    }
+    end
   end
   
   def new
   end
+  
 end

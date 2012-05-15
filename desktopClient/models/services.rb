@@ -19,7 +19,6 @@ module Services
     req = Net::HTTP::Post.new(uri.path)
     req.set_form_data({"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=" ,
       'message[content]'=> msg ,
-      'message[from]' => username ,
       'message[channel_id]' => channel,
       'message[to]' => to,
       'client_username' => username,
@@ -31,12 +30,30 @@ module Services
       end
       case res
         when Net::HTTPSuccess, Net::HTTPRedirection
-          puts "Mensaje enviado"
+          puts "Mensaje  #{msg} enviado"
         else
           res.value
       end
   end
 
+  def update_channel(user_id,channel_id,uri)
+    uri = URI(uri)
+    req = Net::HTTP::Post.new(uri.path)
+    req.set_form_data({"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=" ,
+      'user[id]'=> user_id ,
+      'user[channel_id]' => channel_id,
+      'commit'=>'Enviar' })
+
+      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+        http.request(req)
+      end
+      case res
+        when Net::HTTPSuccess, Net::HTTPRedirection
+          puts "Canal actualizado"
+        else
+          res.value
+      end
+  end
   def login(username, pwd , uri)
     uri = URI(uri)
     req = Net::HTTP::Post.new(uri.path)
@@ -51,12 +68,29 @@ module Services
       case res
         when Net::HTTPSuccess, Net::HTTPRedirection
           response = JSON.parse res.body 
-          return response["res"]
+          return response
         else
           return res.value
       end  
   end
 
+  def logout(username, uri)
+    uri = URI(uri)
+    req = Net::HTTP::Post.new(uri.path)
+    req.set_form_data({"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=" ,
+      'user[username]'=> username,
+      "commit"=>"Enviar" })
+      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+        http.request(req)
+      end
+      case res
+      when Net::HTTPSuccess, Net::HTTPRedirection
+        return "Hasta pronto"
+      else
+        return res.value
+      end
+
+    end
 
   def register(user,uri)
     #uri = URI("http://127.0.0.1:3000/register.json")

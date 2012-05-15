@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+
   helper_method :current_user
   helper_method :current_channel
   helper_method :current_channel_route
   helper_method :current_user_channel
   
   protect_from_forgery
-    rescue_from CanCan::AccessDenied do |exception|
-      flash[:error] = "Access denied."
-      redirect_to root_url
+  rescue_from CanCan::AccessDenied do |exception|    
+        flash[:error] = "No tiene privilegios para ingresar"
+        #redirect_to root_url
   end
     
   private
