@@ -64,10 +64,10 @@ class User
    end
    
    def set_current_channel msg
-     channel_id = @channels.select{|channel| channel["name"].eql? msg.split[1]}[0]["id"]
-     update_channel(@user_id,channel_id, "#{@provider}/register_channel.json")     
-     @channel_info = get_from_server "#{@provider}/chat.json?username=#{@username}&channel=#{msg.split[1]}"
      @current_channel =  msg.split[1]
+     channel_id = @channels.select{|channel| channel["name"].eql? @current_channel}[0]["id"]
+     update_channel(@user_id,channel_id, "#{@provider}/register_channel.json")     
+     @channel_info = get_from_server "#{@provider}/chat.json?username=#{@username}&channel=#{@current_channel}"
      puts "Ahora el canal actual es: #{@current_channel}"
      puts "Usuarios disponibles:"
      for user in @channel_info["users"]
@@ -120,7 +120,6 @@ class User
                @msgs_queue.size.times do
                  msg = @msgs_queue.pop
                  user = @channel_info["users"].select{|user| user["id"] == msg["from"]}[0]
-                 puts "Evalue"
                  puts "#{user["username"]} : #{msg['content']} ,   enviado => #{msg['created_at']}"
                end
              end

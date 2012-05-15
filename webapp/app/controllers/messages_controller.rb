@@ -72,7 +72,8 @@ class MessagesController < ApplicationController
       @user_msg = "#{t(:new_channel_selected)} : #{current_channel.name}"
       current_user.channel_id = params[:channel_id]
       current_user.save
-      PrivatePub.publish_to(current_channel_route, "$('#message_to').append(\"<option value = '#{current_user.id}'>#{current_user.username}</option>\");")
+      PrivatePub.publish_to(current_channel_route,
+       "$('#message_to').append(\"<option value = '#{current_user.id}'>#{current_user.username}</option>\");")
     else
       redirect_to root_url
     end
@@ -97,13 +98,6 @@ class MessagesController < ApplicationController
     end
   end
   
-  def channels_list
-    @channels = Channel.all
-    respond_to do |format|
-      format.json { render json: @channels }
-      format.xml {render xml: @channels}
-    end 
-  end
 end
 
 

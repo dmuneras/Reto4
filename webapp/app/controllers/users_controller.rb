@@ -71,8 +71,9 @@ class UsersController < ApplicationController
       format.json{
         user = User.find params["user"]["id"]
         user.channel_id = params["user"]["channel_id"]
-        r = user.save
-        logger.info "=============== SE GUARDO #{r}"
+        user.save
+        PrivatePub.publish_to("/messages/new/#{user.channel.name}",
+          "$('#message_to').append(\"<option value = '#{user.id}'>#{user.username}</option>\");")
         render json: true
       }
      end
