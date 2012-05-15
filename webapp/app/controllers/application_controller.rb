@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_channel_route
   helper_method :current_user_channel
   
+  protect_from_forgery
+    rescue_from CanCan::AccessDenied do |exception|
+      flash[:error] = "Access denied."
+      redirect_to root_url
+  end
+    
   private
   def current_user?
     redirect_to(root_url, :notice => "Debe iniciar sesion") unless current_user

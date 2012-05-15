@@ -1,13 +1,4 @@
 <h1>Chat</h1>
-<p><%= t(:to_create_channel) %></p>
-<%= form_for Channel.new, remote: true do |f| %>
-<%= f.label t(:name_channel) %><br />
-<%= f.text_field :name %>
-<%= f.submit t(:create), :id => "create-channel" %>
-<% end %>
-<span id= "msg-channel"></span>
-<br>
-<%= link_to "Lista de canales", channels_url%>
 <div id = "channel_list">
 	<p><%= t(:choose_channel)%></p>
 	<%= form_tag '/update_chat', remote: true do %>

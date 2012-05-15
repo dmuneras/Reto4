@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120512214735) do
+ActiveRecord::Schema.define(:version => 20120515021450) do
 
   create_table "channels", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(:version => 20120512214735) do
     t.integer  "channel_id"
   end
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
@@ -36,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20120512214735) do
     t.datetime "updated_at"
     t.integer  "channel_id"
     t.string   "password"
+    t.string   "role"
+    t.integer  "roles_mask"
   end
 
 end

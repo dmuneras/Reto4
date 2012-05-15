@@ -2,6 +2,10 @@
 # Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
 
 es-CO:
+  created_at: Creado en 
+  edit_users: Editar usuarios
+  roles: roles
+  channels: canales
   user_was_successfully_created: "Usuario creado satisfactoriamente"
   current_user_nil: "Amigo es mejor que este logueado, sino nada funciona"
   content_presence_msg: "El contenido del mensaje no puede estar vacio"

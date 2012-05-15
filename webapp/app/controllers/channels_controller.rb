@@ -30,6 +30,7 @@ class ChannelsController < ApplicationController
     @channel = Channel.new
     respond_to do |format|
       format.json { render json: @channel }
+      format.html
     end
   end
 
@@ -46,10 +47,16 @@ class ChannelsController < ApplicationController
       if @channel.save
         format.js {@user_msg = "#{t(:new_channel_created)} : #{@channel.name}"}
         format.json { render json: @channel, status: :created, location: @channel }
+        format.html{
+           PrivatePub.publish_to('/messages',
+           "$('select#channel_id').append('<option value = #{@channel.id} > #{@channel.name}</option>')")
+           redirect_to channels_path
+        }
       else
         @error_msg = @channel.errors.full_messages[0]
         format.js { render action: "errors" }
         format.json { render json: @channel.errors, status: :unprocessable_entity }
+        format.html {render action: "new"}
       end
     end
   end

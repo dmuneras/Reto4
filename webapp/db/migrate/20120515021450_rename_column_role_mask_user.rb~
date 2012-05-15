@@ -1,0 +1,9 @@
+class RenameColumnRoleMaskUser < ActiveRecord::Migration
+  def up
+    rename_column :user, :role_mask, :roles_mask
+  end
+
+  def down
+    rename_column :user, :roles_mask, :role_mask
+  end
+end

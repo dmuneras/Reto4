@@ -4,7 +4,6 @@ class MessagesController < ApplicationController
   def index 
     respond_to do |format| 
       format.html{
-        flash[:error] = t(:current_user_nil) if current_user.nil?
         @messages = Message.messages_by_channel(current_channel,current_user) 
         @users = User.users_by_channel current_channel
         @channels = Channel.all  

@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to root_url, :notice => t(:signed_in)
           else
-            render json: false
+            redirect_to local_login_form_path, :notice => "Datos incorrectos"
           end
         else
           redirect_to root_url
