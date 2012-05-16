@@ -51,20 +51,29 @@ Despliegue de las aplicaciónes
 **Aplicación web**
 --------------
 
-Ingresar a la carpeta webapp y ejecutar el comando: <code>bundle install<code> este comando instalara todos los requerimientos
-para correr la aplicación y en caso de haber un problema lo repotara.
+Ingresar a la carpeta webapp y ejecutar para instalar todos los requerimientos. 
+<code>bundle install 
 
-Luego ejecutar el comando <code>rake db:migrate<code> para crear la base de datos.
+Para correr la aplicación y en caso de haber un problema lo repotara.
+
+Luego ejecutar el comando para crear la base de datos:
+
+<code>rake db:migrate<code> 
 	
-Finalmente ejecute <code>rails s<code> para iniciar el servidor y desde su navegador vaya a la direccion **http://localhost:3000**
 
+	
+Finalmente ejecute el siguiente comando para iniciar el servidor:
+
+<code>rails s
+
+Y desde su navegador vaya a la direccion **http://localhost:3000** 
 	
 
 **Aplicación cliente grueso**
 -------------------------
 
-COMO EJECUTAR
--------------
+**COMO EJECUTAR**
+
 **NOTA** : La aplicación cliente solo funciona en el momento para usuarios locales, no hay logueo con Twitter o Facebook desde el cliente
 
 Dirigirse al directorio donde se encuentra el archivo **startChat.rb** y ejecutar el comando:
@@ -73,8 +82,7 @@ Dirigirse al directorio donde se encuentra el archivo **startChat.rb** y ejecuta
  ruby startChat.rb <nickname-local-user> **Example** ruby startClient.rb admin
 <code>
 
-COMANDOS DISPONIBLES
---------------------
+**COMANDOS DISPONIBLES**
 
 * canal: <nombre del canal> ~> Comando utilizado despues de loguearse para seleccionar el canal que se va a usar para chatear.
 * enviar: <msg>  ~> Comando utilizado para enviar un mensaje al canal.
