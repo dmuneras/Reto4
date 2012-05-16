@@ -64,7 +64,8 @@ class SessionsController < ApplicationController
       user = User.find_by_username params["user"]["username"]
       if user
         PrivatePub.publish_to("/messages/new/#{user.channel.name}",
-           "$(\"#message_to option:regex(value,#{user.id})\").remove();")
+           "$(\"#message_to option:regex(value,#{user.id})\").remove();
+           $('#message_to').trigger('liszt:updated');")
         user.channel_id = nil
         user.save
       end

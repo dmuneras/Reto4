@@ -73,7 +73,8 @@ class UsersController < ApplicationController
         user.channel_id = params["user"]["channel_id"]
         user.save
         PrivatePub.publish_to("/messages/new/#{user.channel.name}",
-          "$('#message_to').append(\"<option value = '#{user.id}'>#{user.username}</option>\");")
+          "$('#message_to').append(\"<option value = '#{user.id}'>#{user.username}</option>\");
+          $('#message_to').trigger('liszt:updated');")
         render json: true
       }
      end

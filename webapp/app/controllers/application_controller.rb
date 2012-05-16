@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  include Scripts
+  
   helper_method :current_user
   helper_method :current_channel
   helper_method :current_channel_route
@@ -8,7 +10,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   rescue_from CanCan::AccessDenied do |exception|    
         flash[:error] = "No tiene privilegios para ingresar"
-        #redirect_to root_url
+        redirect_to root_url
   end
     
   private
@@ -30,7 +32,8 @@ class ApplicationController < ActionController::Base
   
   def current_channel
     begin
-        return @current_channel = Channel.find(session[:channel_id]) if session[:channel_id]     
+       @current_channel = Channel.find(session[:channel_id]) if session[:channel_id]   
+       return @current_channel  
     rescue Exception => e
         return nil
     end

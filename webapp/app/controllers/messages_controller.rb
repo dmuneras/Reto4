@@ -67,13 +67,23 @@ class MessagesController < ApplicationController
   end
 
   def update_chat  
-    unless params[:channel_id].blank? 
-      session[:channel_id] = params[:channel_id] 
-      @user_msg = "#{t(:new_channel_selected)} : #{current_channel.name}"
-      current_user.channel_id = params[:channel_id]
-      current_user.save
-      PrivatePub.publish_to(current_channel_route,
-       "$('#message_to').append(\"<option value = '#{current_user.id}'>#{current_user.username}</option>\");")
+    unless params[:channel_id].blank?
+        session[:channel_id] = params[:channel_id] 
+        previous_channel = current_user.channel
+        @user_msg = "#{t(:new_channel_selected)} : #{current_channel.name}"
+        current_user.channel_id = params[:channel_id]
+        current_user.save
+        logger.info "PREVIOUS CHANNEL : #{previous_channel.name if previous_channel}," <<
+         "CURRENT_CHANNEL : #{current_channel.name if current_channel}"
+        if previous_channel
+          if previous_channel != current_channel
+            logger.info "\n\n\n-------------> REMOVI #{current_user.username} de /messages/new/#{previous_channel.name}\n\n\n"
+            PrivatePub.publish_to("/messages/new/#{previous_channel.name}",remove_user_from_list(current_user.id)) 
+          end
+        end
+        logger.info "\n\n\n----------------> AGREGE #{current_user.username} de #{current_channel_route}\n\n\n"
+        PrivatePub.publish_to(current_channel_route,append_user_to_list(current_user.id , current_user.username))  
+            
     else
       redirect_to root_url
     end

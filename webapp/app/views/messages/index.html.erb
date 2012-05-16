@@ -2,7 +2,8 @@
 <div id = "channel_list">
 	<p><%= t(:choose_channel)%></p>
 	<%= form_tag '/update_chat', remote: true do %>
-	<%= select_tag "channel_id", options_from_collection_for_select(@channels, "id", "name"), {:include_blank => true} %>
+	<%= select_tag "channel_id", options_from_collection_for_select(@channels, "id", "name"),
+	 {:include_blank => true, :class => "chzn-select" } %>
 	<%= submit_tag t(:choose)%>
 	<% end %>
 </div>
@@ -19,7 +20,8 @@
 		</ul>
 		<%= form_for Message.new, remote: true do |f| %>
 			<%= f.text_field :content %>
-			<%= select_tag "message[to]", options_from_collection_for_select(@users, "id", "username"), {:include_blank => true} %>
+			<%= select_tag "message[to]", options_from_collection_for_select(@users, "id", "username"),
+			 {:include_blank => true,:class => "chzn-select"} %>
 			<%= f.submit t(:send), :id => "create-msg" %>
 		<% end %>
 		<span id = "msg-chat"></span>

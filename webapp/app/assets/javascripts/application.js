@@ -9,6 +9,7 @@
 //= require twitter/bootstrap
 //= require private_pub
 //= require_tree .
+//= require chosen.jquery.min
 
 jQuery.expr[':'].regex = function(elem, index, match) {
     var matchParams = match[3].split(','),
@@ -25,6 +26,8 @@ jQuery.expr[':'].regex = function(elem, index, match) {
 
 $('document').ready(function(){
 	
+	$('.chzn-select').chosen();
+	
 	$('#flash_notice').animate({
 			'opacity':'0',
 			'height' : '0px'
@@ -34,7 +37,6 @@ $('document').ready(function(){
 			'height' : '0px'
 	}, 2000);
 	$('form').submit(function(event){
-			//event.preventDefault();
 			$('#flash_notice','#flash_error').css('display','block');
 	});	
 });

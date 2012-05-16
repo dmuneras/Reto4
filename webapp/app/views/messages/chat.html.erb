@@ -7,10 +7,14 @@
 	</ul>
 	<%= form_for Message.new, remote: true do |f| %>
   		<%= f.text_field :content %>
-  		<%= select_tag "message[to]", options_from_collection_for_select(@users, "id", "username"), {:include_blank => true} %>
+  		<%= select_tag "message[to]", options_from_collection_for_select(@users, "id", "username"),
+ 		{:include_blank => true , :class => "chzn-select"} %>
   		<%= f.submit t(:send), :id => "create-msg" %>
 	<% end %>
 	<span id = "msg-chat"></span>
 <% end %>
 <%= subscribe_to current_channel_route %>
+<script type= "text/javascript">
+	$('.chzn-select').chosen();
+</script>
 	

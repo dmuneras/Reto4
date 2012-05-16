@@ -52,7 +52,7 @@ class ChannelsController < ApplicationController
            PrivatePub.publish_to('/messages',
            "$('select#channel_id').append('<option value = #{@channel.id} > #{@channel.name}</option>');
            $('#msg-channel').css('display','block');$('#msg-channel').html('se ha creado un nuevo canal');
-           $('#msg-channel').fadeOut(2000);")
+           $('#msg-channel').fadeOut(2000);$('#channel_id').trigger('liszt:updated');")
            redirect_to channels_path
         }
       else
@@ -88,7 +88,7 @@ class ChannelsController < ApplicationController
       format.html { 
         PrivatePub.publish_to('/messages', "$(\"#channel_id option:regex(value,#{@channel.id})\").remove();
         $('#msg-channel').css('display','block');$('#msg-channel').html('se ha eliminado un nuevo canal');
-        $('#msg-channel').fadeOut(2000);")
+        $('#channel_id').trigger('liszt:updated');$('#msg-channel').fadeOut(2000);")
         redirect_to channels_url
       }
       format.json { head :ok }

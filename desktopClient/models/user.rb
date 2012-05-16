@@ -85,7 +85,8 @@ class User
         channel = @channels.select{|channel| channel["name"].eql? @current_channel}
         if msg_array.size > 1
           channel = @channels.select{|channel| channel["name"].eql? @current_channel}
-          user_id = @channel_info["users"].select{|user| user["username"].eql? msg_array[1]}[0]["id"]
+          puts @channel_info
+          user_id = @channel_info["users"].select{|user| user["username"].chop.eql? msg_array[1]}[0]["id"]
           msg = msg_array[0].split
           msg = msg - [msg[0]]
         end

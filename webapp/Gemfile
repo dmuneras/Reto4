@@ -26,3 +26,4 @@ gem 'thin'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'cancan'
+
