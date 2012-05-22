@@ -67,7 +67,10 @@ Finalmente ejecute el siguiente comando para iniciar el servidor:
 <code>rails s
 
 Y desde su navegador vaya a la direccion **http://localhost:3000** 
-	
+
+debe iniciar el servidor de la aplicacion para el websocket
+
+<code>bundle exec rackup private_pub.ru -s thin -p 8000 -E production
 
 **Aplicación cliente grueso**
 -------------------------
