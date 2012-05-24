@@ -99,6 +99,7 @@ Dirigirse al directorio donde se encuentra el archivo **startChat.rb** y ejecuta
 * canal: <nombre del canal> ~> Comando utilizado despues de loguearse para seleccionar el canal que se va a usar para chatear.
 * enviar: <msg>  ~> Comando utilizado para enviar un mensaje al canal.
 * enviar: <msg> => <username> ~> Comando utilizado para enviar un mensaje privado a un usuario de un canal.
+* usuarios    ~> Lista los usuarios del canal actual
 * quit ~> Comando para salir de la aplicacion.
 
 
