@@ -57,7 +57,12 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
      respond_to do |format|
        if @user.update_attributes(params[:user])
-         format.html { redirect_to users_path, notice: 'Channel was successfully updated.' }
+         format.html { 
+           @user.password = Digest::MD5.hexdigest @user.password
+           @user.save
+           redirect_to users_path, notice: 'Channel was successfully updated.' 
+         
+         }
          format.json { head :ok }
        else
          format.html { render action: "edit" }

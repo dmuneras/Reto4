@@ -25,7 +25,7 @@ module Services
       'agent' => 'desktop',
       'commit'=>'Enviar' })
 
-      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      res = Net::HTTP.start(uri.host, uri.port) do |http|
         http.request(req)
       end
       case res
@@ -44,7 +44,7 @@ module Services
       'user[channel_id]' => channel_id,
       'commit'=>'Enviar' })
 
-      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      res = Net::HTTP.start(uri.host, uri.port) do |http|
         http.request(req)
       end
       case res
@@ -62,7 +62,7 @@ module Services
       'user[username]'=> username,
       'user[password]' => pwd ,
       "commit"=>"Enviar" })
-      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      res = Net::HTTP.start(uri.host, uri.port) do |http|
         http.request(req)
       end
       case res
@@ -80,7 +80,7 @@ module Services
     req.set_form_data({"authenticity_token"=>"nF6xmLqUBO6TieDF7yNeCxV18smil6hV3omA/s3ljoM=" ,
       'user[username]'=> username,
       "commit"=>"Enviar" })
-      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      res = Net::HTTP.start(uri.host, uri.port) do |http|
         http.request(req)
       end
       case res
@@ -101,7 +101,7 @@ module Services
       "user[provider]" => "local",
       "user[password]" => pwd ,
       "commit"=>"Enviar" })
-      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      res = Net::HTTP.start(uri.host, uri.port) do |http|
         http.request(req)
       end
       case res
