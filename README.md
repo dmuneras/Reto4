@@ -52,25 +52,34 @@ Despliegue de las aplicaciónes
 --------------
 
 Ingresar a la carpeta webapp y ejecutar para instalar todos los requerimientos. 
-<code>bundle install 
+
+```bash
+bundle install 
+```
 
 Para correr la aplicación y en caso de haber un problema lo repotara.
 
 Luego ejecutar el comando para crear la base de datos:
 
-<code>rake db:migrate<code> 
+```bash
+rake db:migrate
+```
 	
 
 	
 Finalmente ejecute el siguiente comando para iniciar el servidor:
 
-<code>rails s
+```bash
+rails s
+```
 
 Y desde su navegador vaya a la direccion **http://localhost:3000** 
 
 debe iniciar el servidor de la aplicacion para el websocket
 
-<code>bundle exec rackup private_pub.ru -s thin -p 8000 -E production
+```bash
+bundle exec rackup private_pub.ru -s thin -p 8000 -E production
+```
 
 **Aplicación cliente grueso**
 -------------------------
@@ -81,9 +90,9 @@ debe iniciar el servidor de la aplicacion para el websocket
 
 Dirigirse al directorio donde se encuentra el archivo **startChat.rb** y ejecutar el comando:
 
-<code>
- ruby startChat.rb <nickname-local-user> **Example** ruby startClient.rb admin
-<code>
+```bash
+ ruby startChat.rb **nickname-local-user** ,  **Example** ruby startClient.rb admin
+```bash
 
 **COMANDOS DISPONIBLES**
 
