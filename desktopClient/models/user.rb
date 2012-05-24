@@ -37,7 +37,16 @@ class User
        puts "=>" << channel["name"]
     end
     while @online
-      read_from_console
+      begin
+        read_from_console
+      rescue SystemExit, Interrupt
+        puts "Salida inesperada"
+        exit(0)
+      rescue Exception => e
+        puts "Se ha producido un error #{e}"
+        puts logout(@username, "#{@provider}/signout.json")
+        exit(0)
+      end       
     end
     puts logout(@username, "#{@provider}/signout.json")
   end
@@ -78,19 +87,24 @@ class User
    
    def send_msg msg
      if @current_channel
-        msg_array = msg.split("=> ")
-        user_id = nil
-        msg = msg.split
-        msg = msg - [msg[0]]
-        channel = @channels.select{|channel| channel["name"].eql? @current_channel}
-        if msg_array.size > 1
-          channel = @channels.select{|channel| channel["name"].eql? @current_channel}
-          puts @channel_info
-          user_id = @channel_info["users"].select{|user| user["username"].chop.eql? msg_array[1]}[0]["id"]
-          msg = msg_array[0].split
-          msg = msg - [msg[0]]
-        end
-        send_message(msg.join(" "),@username,channel[0]["id"],user_id, "#{@provider}/message_client/")
+       msg_array = msg.split("=> ")
+       user_id = nil
+       msg = msg.split
+       msg = msg - [msg[0]]
+       channel = @channels.select{|channel| channel["name"].eql? @current_channel}
+       if msg_array.size > 1
+         channel = @channels.select{|channel| channel["name"].eql? @current_channel}
+         user = @channel_info["users"].select{|user| user["username"].strip.eql? msg_array[1].strip }
+         if user.nil? or (user.size == 0)
+           puts "No se pudo encontrar el ID del usuario"
+           return
+         else
+           user_id = user[0]["id"]
+         end
+         msg = msg_array[0].split
+         msg = msg - [msg[0]]
+       end
+       send_message(msg.join(" "),@username,channel[0]["id"],user_id, "#{@provider}/message_client/")
      else
        puts "No ha seleccionado canal"
      end

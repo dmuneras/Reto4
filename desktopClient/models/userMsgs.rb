@@ -5,6 +5,7 @@ module UserMsgs
   end
   
   def user_help
-    puts "canal: <nombre> . Para seleccionar un canal\nenviar: <msg> . Para enviar un mensaje al canal seleccionado"
+    puts "canal: <nombre> . Para seleccionar un canal\nenviar: <msg> . Para enviar un mensaje al canal seleccionado\n" <<
+    "usuarios . Para ver los usuarios disponibles en el canal."
   end
 end
