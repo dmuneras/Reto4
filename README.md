@@ -92,7 +92,7 @@ Dirigirse al directorio donde se encuentra el archivo **startChat.rb** y ejecuta
 
 ```bash
  ruby startChat.rb **nickname-local-user** ,  **Example** ruby startClient.rb admin
-```bash
+```
 
 **COMANDOS DISPONIBLES**
 
